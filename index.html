@@ -13,6 +13,42 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+div {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+div:before,
+div:after, span {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #2a38b5;
+  animation: glow-grow 2s ease-out infinite;
+}
+div:after {
+  animation-delay: .66s;
+}
+span{
+  animation-delay: 1.33s;
+  }
+@keyframes glow-grow {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
 #container{
     width: 300px;
     height: 300px;
